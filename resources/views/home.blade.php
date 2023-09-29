@@ -1,4 +1,6 @@
 @extends('layouts.public')
-@section('title', 'Home')
+@section("title", "DC Comics - Homepage")
+
 @section('content')
+
 @endsection
