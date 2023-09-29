@@ -29,11 +29,11 @@
           <div class="mt-1 mb-1">
             <div class="card-text text-primary">
               <span class="fw-bold">Artists: </span>
-              <small class="text-body-secondary">{{$comics["artists"]}}</small>
+              <small class="text-body-secondary">{{join(", ",json_decode($comics["artists"]))}}</small>
             </div>
             <div class="card-text text-primary">
               <span class="fw-bold">Writers: </span>
-              <small class="text-body-secondary">{{$comics["writers"]}}</small>
+              <small class="text-body-secondary">{{join(", ",json_decode($comics["writers"]))}}</small>
             </div>
           </div>
         </div>

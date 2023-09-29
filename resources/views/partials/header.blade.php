@@ -20,8 +20,8 @@
         id="navbarNavAltMarkup"
       >
         <div class="navbar-nav text-uppercase">
-          <a class="nav-link" href="/1">Character</a>
-          <a class="nav-link" href="#">Comics</a>
+          <a class="nav-link" href="/">Character</a>
+          <a class="nav-link" href="/">Comics</a>
           <a class="nav-link" href="#">Movies</a>
           <a class="nav-link" href="#">Tv</a>
           <a class="nav-link" href="#">Games</a>
