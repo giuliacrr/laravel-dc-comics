@@ -32,9 +32,11 @@
       </div>
     </div>
     <div class="text-center mb-3">
+      <a class="nav-link" href="/comic/create">
       <button class="text-uppercase fw-bold fs-6 p-2" type="button">
-        show more
-      </button>
+        Add comic
+      </button></a>
+      
     </div>
   </div>
 </div>

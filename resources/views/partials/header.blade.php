@@ -22,7 +22,7 @@
         <div class="navbar-nav text-uppercase">
           <a class="nav-link" href="/">Character</a>
           <a class="nav-link" href="/">Comics</a>
-          <a class="nav-link" href="#">Movies</a>
+          <a class="nav-link" href="/comic/create">Form</a>
           <a class="nav-link" href="#">Tv</a>
           <a class="nav-link" href="#">Games</a>
           <a class="nav-link" href="#">Collectibles</a>

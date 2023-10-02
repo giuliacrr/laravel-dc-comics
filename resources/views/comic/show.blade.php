@@ -44,7 +44,7 @@
   
   <div class="d-flex justify-content-center mb-3">
     <a href="{{ route('comic.index', ["id" => $comics['id']]) }}" class="btn btn-outline-primary ms-2 me-2">Go back</a>
-    <a href="{{ route('comic.index', ["id" => $comics['id']]) }}" class="btn btn-outline-primary ms-2 me-2">Buy for {{$comics["price"]}}</a>
+    <a href="{{ route('comic.index', ["id" => $comics['id']]) }}" class="btn btn-outline-primary ms-2 me-2">Buy for {{$comics["price"]}}&euro;</a>
   </div>
 
 
