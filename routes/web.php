@@ -13,11 +13,22 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
-Route::get('/comic', [ComicController::class, "index"])->name("comic.index");
+//REDIRECT FROM / TO /COMIC
 Route::get("/", function(){return redirect("/comic");});
 
-Route::get("/comic/create", [ComicController::class, "create"])->name("comic.create");
-Route::post("/comic", [ComicController::class, "store"])->name("comic.store");
+//CREATE
+Route::get("/comic/create", [ComicController::class, "create"])->name("comic.create");//Indirizza ad una pagina con form per inserire i dati;
+Route::post("/comic", [ComicController::class, "store"])->name("comic.store");//Rotta di dove verranno inviati i dati. Essa è in POST. 
 
-Route::get('/comic/{comic}', [ComicController::class, "show"])->name("comic.show");
+//READ
+Route::get('/comic', [ComicController::class, "index"])->name("comic.index");//Anteprima degli elementi
+Route::get('/comic/{comic}', [ComicController::class, "show"])->name("comic.show");//Dettagli di un elemento
+
+//UPDATE
+Route::get('/comic/{comic}/edit', [ComicController::class, "edit"])->name("comic.edit");
+//Route::patch('/comic/{comic}', [ComicController::class, "update"])->name("comic.update");
+//Route::put('/comic/{comic}', [ComicController::class, "update"])->name("comic.update");
+Route::match(["patch","put"], '/comic/{comic}/update', [ComicController::class, "update"])->name("comic.update");
+
+//DESTROY - il metodo è DELETE e anche sul controller è $comics->delete();
+Route::delete('/comic/{comic}', [ComicController::class]);

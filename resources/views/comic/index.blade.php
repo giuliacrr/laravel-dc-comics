@@ -23,6 +23,7 @@
               <div class="comic-name text-white text-uppercase text-center fw-bold">{{ $card["series"] }}</div>
               <div class="comic-name text-white text-center fw-bold">{{$card["price"]}}&euro;</div>
             </a>
+            {{--METTI PULSANTE EDIT CHE MANDA AD EDIT DI QUELL'ID--}}
           </div>
         </div>
       </div>

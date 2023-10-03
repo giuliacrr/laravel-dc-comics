@@ -4,7 +4,8 @@
 @section("content")
 
 <div class="container">
-
+{{--METTI PULSANTE EDIT CHE MANDA AD EDIT DI QUELL'ID--}}
+{{--METTI PULSANTE cancella IN UN FORM--}}
   <div class="card mb-3 mt-5">
     <div class="row g-0">
       <div class="col-md-4">
@@ -36,6 +37,7 @@
               <small class="text-body-secondary">{{join(", ",json_decode($comics["writers"]))}}</small>
             </div>
           </div>
+          <a href="{{ route('comic.edit', $comics->id) }}" class="btn btn-warning">Edit</a>
         </div>
       </div>
     </div>
