@@ -91,12 +91,20 @@ class ComicController extends Controller
 
     //DESTROY
     //Inserisco il request per recuperare i dati per il force delete (vedi florian)
-    //public function destroy($id){
-    //  $comics = Comic::findOrFail($id);
-    //    $comics->delete();
-    //  //AGGIUNGI colonna migration deleted_at (vedi Comic.php);
-    //  return redirect()->route('comic.index');
-    //}
+    public function destroy(Request $request, $id){
+        
+        if ($request->input("force")) {
+            $comics = Comic::onlyTrashed()->where("id", $id)->first();
+            //Force delete (permanente)
+            $comics->forceDelete();
+        }else {
+            $comics = Comic::findOrFail($id);
+            //Soft delete (non permanente -> trash)
+            $comics->delete();
+        }
+
+        return redirect()->route('comic.index');
+    }
 
     
 }

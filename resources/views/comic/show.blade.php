@@ -38,6 +38,11 @@
             </div>
           </div>
           <a href="{{ route('comic.edit', $comics->id) }}" class="btn btn-warning">Edit</a>
+          <form action="{{ route('comic.destroy', $comics->id) }}" method="POST" class="d-inline-block">
+            @csrf
+            @method("DELETE")
+            <button type="submit" class="btn btn-danger">Delete</button>
+          </form>
         </div>
       </div>
     </div>

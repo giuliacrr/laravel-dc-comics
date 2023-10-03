@@ -15,21 +15,21 @@
         @foreach($comics as $card)
         <div class="cardz-box position-relative mb-3">
           <!--immagine-->
-          <div><img class="img-cardz" src="{{$card["thumb"]}}" alt="comic" /></div>
+          <div>
+            <img class="img-cardz" src="{{$card["thumb"]}}" alt="comic" />
+          </div>
           <!--titolo-->
           <div>
-          <div class="position-absolute hoverme justify-content-center align-items-center">
-            <a href="{{ route('comic.show', $card['id']) }}">
-              <div class="comic-name text-white text-uppercase text-center fw-bold">{{ $card["series"] }}</div>
-              <div class="comic-name text-white text-center fw-bold">{{$card["price"]}}&euro;</div>
-            </a>
+            <div class="position-absolute hoverme justify-content-center align-items-center">
+              <a href="{{ route('comic.show', $card['id']) }}">
+                <div class="comic-name text-white text-uppercase text-center fw-bold">{{ $card["series"] }}</div>
+                <div class="comic-name text-white text-center fw-bold">{{$card["price"]}}&euro;</div>
+              </a>
             {{--METTI PULSANTE EDIT CHE MANDA AD EDIT DI QUELL'ID--}}
+            </div>
           </div>
-        </div>
       </div>
-        @endforeach
-        
-        
+        @endforeach  
       </div>
     </div>
     <div class="text-center mb-3">
