@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Comic extends Model
 {
-    use HasFactory; // SoftDeletes; //SoftDeletes ha però bisogno una colonna deleted_at
+    use HasFactory, SoftDeletes; //SoftDeletes ha però bisogno una colonna deleted_at
     //quindi dobbiamo creare una migration  add_soft_delete_to_comics_table
     //è possibile anche ripristinarlo #Restoring Soft Deleted Models su Laravel.
     //Se voglio cancellarlo definitivamente, posso fare il forceDelete() (cerca Laravel);

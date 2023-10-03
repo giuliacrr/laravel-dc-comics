@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ComicController;
+use App\Models\Comic;
 use Illuminate\Routing\Route as RoutingRoute;
 use Illuminate\Support\Facades\Route;
 
@@ -23,6 +24,7 @@ Route::post("/comic", [ComicController::class, "store"])->name("comic.store");//
 
 //READ
 Route::get('/comic', [ComicController::class, "index"])->name("comic.index");//Anteprima degli elementi
+Route::get("/comic/trash", [ComicController::class, "trash"])->name("comic.trash");
 Route::get('/comic/{comic}', [ComicController::class, "show"])->name("comic.show");//Dettagli di un elemento
 
 //UPDATE
@@ -32,4 +34,4 @@ Route::get('/comic/{comic}/edit', [ComicController::class, "edit"])->name("comic
 Route::match(["patch","put"], '/comic/{comic}/update', [ComicController::class, "update"])->name("comic.update");
 
 //DESTROY - il metodo è DELETE e anche sul controller è $comics->delete();
-Route::delete('/comic/{comic}', [ComicController::class, "destroy"])->name("comic.destroy");
+Route::delete('/comic/{id}', [ComicController::class, "destroy"])->name("comic.destroy");

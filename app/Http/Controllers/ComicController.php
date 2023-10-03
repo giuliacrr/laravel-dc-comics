@@ -89,10 +89,16 @@ class ComicController extends Controller
             return redirect()->route('comic.show', $comics->id);
     }
 
+    //TRASH
+    public function trash() {
+        $comics = Comic::onlyTrashed()->get();
+        return view("comic.trash", ["comics" => $comics]);
+    }
+
     //DESTROY
     //Inserisco il request per recuperare i dati per il force delete (vedi florian)
     public function destroy(Request $request, $id){
-        
+
         if ($request->input("force")) {
             $comics = Comic::onlyTrashed()->where("id", $id)->first();
             //Force delete (permanente)
